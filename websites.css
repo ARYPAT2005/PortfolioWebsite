@@ -1,0 +1,564 @@
+
+html, body {
+    overflow-x: hidden;
+}
+img {
+    position: relative;
+    border-radius: 50%;
+    z-index:999;
+}
+ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+li a {
+    display: block;
+    color: rgba(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+}
+li a:hover {
+    text-decoration:underline;
+}
+.center {
+  
+}
+ul.buttons {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style:none;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+@font-face {
+    font-family: "Geist";
+    src: url("https://assets.codepen.io/605876/GeistVF.ttf") format("truetype");
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --size: 20px;
+  }
+  
+  body {
+    overflow:scroll;
+    display: grid;
+    place-items: center;
+    background: black;
+  }
+  
+  .el {
+    background: conic-gradient(from 180deg at 50% 70%,hsla(0,0%,98%,1) 0deg,#eec32d 72.0000010728836deg,#ec4b4b 144.0000021457672deg,#709ab9 216.00000858306885deg,#4dffbf 288.0000042915344deg,hsla(0,0%,98%,1) 1turn);
+    width: 100%;
+    height: 100%;
+    mask:
+      radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
+      url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
+    mask-composite: intersect;
+    animation: flicker 20s infinite linear;
+  }
+  
+  h1.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    margin: 0;
+    font-size: clamp(6rem, 8vw + 1rem, 14rem);
+    font-family: "Geist", sans-serif;
+    font-weight: 140;
+    color: hsl(0 0% 2%);
+    /* color: hsl(0, 10%, 96%); */
+    /* mix-blend-mode: soft-light; */
+  /*   -webkit-text-stroke: 2px hsl(0 0% 100% / 0.95); */
+    filter: drop-shadow(0 0 2px white);
+    text-shadow: 2px 2px white;
+
+    position: absolute;
+    width:100%;
+    text-align:center;
+  }
+  
+  @keyframes flicker {
+    to {
+      mask-position: 50% 50%, 0 50%;
+    }
+  }
+
+
+
+
+
+  .glow-on-hover {
+    position: sticky;
+    width: 80px;
+    height: 40px;
+    padding: 16px 14px;
+    margin:10px 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background:black;
+    cursor: pointer;
+    position: sticky;
+    z-index: 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+    z-index:999;
+}
+
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#353839;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+
+
+    
+}
+
+/*Second Page*/
+html{
+    scroll-behavior:smooth;
+}
+h1.header {
+    color: white!important;
+    position: absolute;
+    top: 810px;
+    left: 31%;
+    translate: -50% -50%;
+    font-size: 11.5vh;
+}
+h1.headertwo {
+    position: absolute;
+    top: 650px;
+    left: 30%;
+    translate: -50% -50%;
+    font-size: 5em;
+}
+
+h1.headerThree {
+    position: absolute;
+    top: 1290px;
+    left: 30%;
+    translate: -50% -50%;
+    font-size: 5em;
+}
+
+h1.headerfour {
+    position: absolute;
+    top: 1825px;
+    left: 30%;
+    translate: -50% -50%;
+    font-size: 5em;
+}
+
+hr.header {
+    color: white!important;
+    position: absolute;
+    top: 900px;
+    left: 30%;
+    translate: -50% -50%;
+    width:582px;
+    /* border-width:50px; */
+}
+hr.headerright {
+    color: white!important;
+    position: absolute;
+    top: 900px;
+    left: 82%;
+    translate: -50% -50%;
+    width:300px;
+}
+hr.headerSport {
+    color: white!important;
+    position: absolute;
+    top: 1190px;
+    left: 82%;
+    translate: -50% -50%;
+    width:250px;
+}
+
+p.header{
+    text-align:center;
+    color:white;
+    position:absolute;
+    top: 940px;
+    translate: -50% -50%;
+    left: 33%;
+    font-size:1.8em;
+}
+.Gatech {
+    position:absolute;
+    top:1180px;
+    left:30%;
+    transform: translate(-50%, -50%);
+}
+.KC {
+    height:100px;
+    width:100px;
+    position:absolute;
+    top:1257px;
+    left:82%;
+    transform: translate(-50%, -50%);
+}
+h1.Fun {
+    position:absolute;
+    top: 850px;
+    left:82%;
+    translate:-50% -50%;
+    font-size: 3em;
+    color:white;
+}
+div.borders {
+    border-style: dotted;
+    border-color: white;
+    border-width: 5px;
+    position: absolute;
+    top: 820px;
+    left: 2%;
+    width: 63vw;
+    height: 73vh; 
+    content: "";
+}
+div.bordersBottom {
+    /* background-color: #353839; */
+    border-style: dotted;
+    border-color: white;
+    border-width: 5px;
+    position: absolute;
+    translate: -50% -50%;
+    top: 1700px;
+    left: 50%;
+    width: 700px;
+    height: 350px; 
+    content: "";
+}
+div.bordersContact {
+    border-style: dotted;
+    border-color: white;
+    border-width: 5px;
+    position: absolute;
+    translate: -50% -50%;
+    top: 2170px;
+    left: 50%;
+    width: 700px;
+    height: 250px; 
+    content: "";
+}
+div.Email {
+    border-radius: 10px;
+    /* background-color: #353839; */
+    border-style: solid;
+    border-color: white;
+    border-width: 1.5px;
+    position: absolute;
+    translate: -50% -50%;
+    top: 2170px;
+    left: 40.25%;
+    width: 105px;
+    height: 50px; 
+    content: "";
+}
+
+div.LinkedIn {
+    border-radius: 10px;
+    /* background-color: #353839; */
+    border-style: solid;
+    border-color: white;
+    border-width: 1.5px;
+    position: absolute;
+    translate: -50% -50%;
+    top: 2170px;
+    left: 60%;
+    width: 105px;
+    height: 50px; 
+    content: "";
+}
+
+div.borderSkill {
+    border-style: dotted;
+    border-color: white;
+    border-width: 5px;
+    position: absolute;
+    translate: -50% -50%;
+    top: 1720px;
+    left: 50%;
+    width: 800px;
+    height: 510px; 
+    content: "";
+}
+div.bordersright {
+    border-style: dotted;
+    border-color: white;
+    border-width: 5px;
+    position: absolute;
+    top: 820px;
+    left: 69%;
+    width: 332px;
+    height: 73vh; 
+    content: "";
+}
+h2.Movie {
+    position:absolute;
+    color:white;
+    top: 930px;
+    left: 70.5%;
+    width: 332px;
+    height: 510px; 
+    font-size:2em;
+}
+h2.TVShows {
+    position:absolute;
+    color:white;
+    top: 1050px;
+    left: 70.5%;
+    width: 332px;
+    height: 510px; 
+    font-size:2em;
+}
+
+ul.List {
+    position: absolute;
+    color: white;
+    top: 928px;
+    left: 82%;
+    width: 332px;
+    height: 210px;
+    font-size: 1em;
+    list-style-type: disc;
+    margin: 0;
+}
+
+ul.List li {
+    margin-bottom: 10px;
+}
+ul.ListShow {
+    position: absolute;
+    color: white;
+    top: 1048px;
+    left: 82%;
+    width: 332px;
+    height: 210px;
+    font-size: 1em;
+    list-style-type: disc;
+    margin: 0;
+}
+
+ul.ListShow li {
+    margin-bottom: 10px;
+}
+
+.vLine {
+    height: 100px;
+    width: 0;
+    border-left: 2px solid white;
+    color: white;
+    position: absolute;
+    top: 930px;
+    left: 79%;
+}
+.vLineShow {
+    height: 100px;
+    width: 0;
+    border-left: 2px solid white;
+    color: white;
+    position: absolute;
+    top: 1050px;
+    left: 79%;
+}
+h2.Sports {
+    position:absolute;
+    font-size: 2em;
+    color:white;
+    width: 332px;
+    height: 510px; 
+    top: 1130px;
+    left:75%;  
+}
+div.skillss{
+    position:absolute;
+    left:0%;
+    top:500px;
+    width:100%;
+    height:1px;
+    color:white;
+    z-index: 0;
+}
+h1.Skill {
+    position:absolute;
+    font-size: 2.8em;
+    color:white;
+    width: 332px;
+    height: 410px; 
+    top: 1440px;
+    left:46%; 
+}
+
+h1.Contact {
+    position:absolute;
+    font-size: 2.8em;
+    color:white;
+    width: 332px;
+    height: 410px; 
+    top: 1940px;
+    left:44%; 
+}
+
+div.SkillBox {
+    position: absolute;
+    border-width:4px;
+    border-style:solid;
+    border-color:grey;
+    border-radius: 25px;
+    width: 70px;
+    height: 70px;
+    top: 1550px;
+    left: 470px;
+    color: white;
+    font-size: 100px;
+}
+p.CSS {
+    position: absolute;
+    font-size:1.5em;
+    color:#EDEADE;
+    width: 120px;
+    height: 80px;
+}
+p.Rights {
+    position: absolute;
+    font-size:.8em;
+    color:#EDEADE;
+    width: 250px;
+    height: 85px;
+}
+
+.animation {
+    position: relative;
+    animation: MoveUpDown 3s linear infinite;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+}
+/* Add this to your .bigger class */
+.bigger {
+    z-index: 1000;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.bigger:hover {
+    transform: scale(1.1); 
+}
+.bigger {
+    z-index: 1000;
+    transition: transform .3s ease, opacity .3s ease;
+}
+.bigger:hover {
+    transform: scale(1.1);
+}
+
+.buttonBigger:hover {
+    transform: scale(1.1); 
+}
+.buttonBigger {
+    z-index: 1000;
+    transition: transform .3s ease, opacity .3s ease;
+}
+.buttonBigger:hover {
+    transform: scale(1.1);
+    opacity:.5;
+}
+
+
+p.mail {
+    position:absolute;
+    color:white;
+    font:1em;
+    left:39.75%;
+    top:2144px
+}
+p.Link {
+    position:absolute;
+    color:white;
+    font:1em;
+    left:58.75%;
+    top:2144px
+}
+
+div.sticky {
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    padding: 50px;
+    font-size: 20px;
+  }
+
+
+
